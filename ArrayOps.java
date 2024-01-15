@@ -1,9 +1,9 @@
 public class ArrayOps {
     public static void main(String[] args) {
-       System.out.println("Missing number: " + findMissingInt(new int [] {2,0,3})); 
-       System.out.println("Second highest number" + secondMaxValue(new int [] {2,10,-4,89,-100,140}));
-       System.out.println("Arryas contain the same elements? " + containsTheSameElements(new int [] {1,2,3,4,6}, new int [] {4,6,2,1,3,6,1,4,7}));
-       System.out.println("Is array Sorted? " + isSorted(new int [] {1,55,55,60,99,99,99,98}));
+       //System.out.println("Missing number: " + findMissingInt(new int [] {2,0,3})); 
+       System.out.println("Second highest number " + secondMaxValue(new int [] {2,8,3,7,8}));
+       //System.out.println("Arryas contain the same elements? " + containsTheSameElements(new int [] {1,2,3,4,6}, new int [] {4,6,2,1,3,6,1,4,7}));
+       //System.out.println("Is array Sorted? " + isSorted(new int [] {1,55,55,60,99,99,99,98}));
         
     }
     
@@ -33,7 +33,7 @@ public class ArrayOps {
     public static int secondMaxValue(int [] array) {
         int max = array[0];
         int secMax;
-        if (array[1] > max) {
+        if (array[1] >= max) {
             secMax = max;
             max = array[1];
         }
@@ -42,8 +42,8 @@ public class ArrayOps {
         }
 
         for (int i = 2; i < array.length; i++){
-            if (array[i]>max){
-                secMax=max;
+            if (array[i]>=max){
+                secMax = max;
                 max = array[i];
             }
         }

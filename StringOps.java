@@ -25,7 +25,7 @@ public class StringOps {
     ////////////////////////////////////////////////////////////
     public static void main(String[] args) {
         //System.out.println(capVowelsLowRest("vowels are fun"));
-        //System.out.println(camelCase(" Intro to  coMPUter   sCIEncE" ));
+        System.out.println(camelCase(" Intro to  coMPUter   sCIEncE" ));
         //int [] array = new int [allIndexOf("MMMM",'M').length];
         //array = allIndexOf("MMMM",'M');
         //for (int i = 0; i < array.length; i++){
@@ -57,11 +57,20 @@ public class StringOps {
 
     public static String camelCase (String string) {
         String s = "";
-        if ((int) string.charAt(0)!=32){
-            s += string.charAt(0);
+        int firstLetter = 0;
+        while ( (int) string.charAt(firstLetter) == 32){
+            firstLetter++;
+            }
+        if (((int) string.charAt(firstLetter)<91) && ((int) string.charAt(firstLetter)>64)){
+            s += (char)((int) string.charAt(firstLetter) + 32);
+        }
+        else if ((int) string.charAt(firstLetter)!=32){
+             s += (char)((int) string.charAt(firstLetter));
         }
 
-        for (int i = 1; i < string.length(); i ++){
+    
+
+        for (int i = firstLetter+1; i < string.length(); i ++){
             if (((int) string.charAt(i) != 32) && ((int) string.charAt(i-1)!=32) ){
                 if (((int) string.charAt(i)<91) && ((int) string.charAt(i)>64)){
                     s+= (char)((int)string.charAt(i)+32);
